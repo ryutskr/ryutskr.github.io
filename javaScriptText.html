@@ -37,6 +37,29 @@
 		window.JavascriptInterface.showToast(str)
 	    }
 
+	function postMessageopenImageViewer() {
+		const str = `{
+		  "uid": "9999",
+		  "contents": {
+		    "type": "VIEWER",
+		    "startIndex": 1,
+		    "selectedIndexes": [1],
+		    "items": [
+		      {
+		        "text": "List1",
+		        "imageUrl": "https://hyundai.com/icon1.png"
+		      },
+		      {
+		        "text": "List2",
+		        "imageUrl": "https://hyundai.com/icon2.png"
+		      }
+		    ]
+		  },
+		  "resultFuncName": "selectedImages"
+		}`;
+		window.JavascriptInterface.openImageViewer(str)
+	    }
+			
 	function postMessageOpenWebView() {
 		const str = `{
 		  "url": "https://naver.com",
@@ -54,14 +77,67 @@
 		}`;
 		window.JavascriptInterface.openWebBrowser(str)
 	    }
+
+	function postMessageupdateNavigationBarTitle() {
+		window.JavascriptInterface.updateNavigationBarTitle()
+	    }
+
+	function postMessagenavigationBarHide() {
+		const str = `{
+		  "isShow": false
+		}`;
+		window.JavascriptInterface.navigationBar(str)
+	    }
 			
+	function postMessagenavigationBarShow() {
+		const str = `{
+		  "isShow": false
+		}`;
+		window.JavascriptInterface.navigationBar(str)
+	    }
+
+	function postMessagesystemBackgroundColor() {
+		const str = `{
+			  "top": "#FF0000",
+			  "bottom": "#0000FF"
+			}`;
+		window.JavascriptInterface.systemBackgroundColor(str)
+	    }
+	function postMessagesystemStatusBar() {
+		const str = `{
+				 "style": "DARK"
+			}`;
+		window.JavascriptInterface.systemStatusBar(str)
+	    }
+	function postMessagescreenOrientationL() {
+		const str = `{
+			   "orientation": "LANDSCAPE"
+			}`;
+		window.JavascriptInterface.screenOrientation(str)
+	    }
+			
+			function postMessagescreenOrientationP() {
+		const str = `{
+			   "orientation": "PORTRAIT"
+			}`;
+		window.JavascriptInterface.screenOrientation(str)
+	    }	
 		</script>
 
 	</head>
 	
 	<h1><a href="#" onclick="postMessageShowTost()">네이티브에 메시지 전달(showTost)</a></h1><br>
 	<h1><a href="#" onclick="postMessageShowTostWrong()">네이티브에 메시지 전달 오류(showTost)</a></h1><br>
+	<h1><a href="#" onclick="postMessageopenImageViewer()">이미지뷰어 오픈</a></h1><br>
 	<h1><a href="#" onclick="postMessageOpenWebView()">내부 웹뷰(openNewWebView)</a></h1><br>
 	<h1><a href="#" onclick="postMessageOpenWebView()">외부브라우저(openWebBrowser)</a></h1><br>
+	<h1><a href="#" onclick="postMessageupdateNavigationBarTitle()">업데이트 타이틀</a></h1><br>
+	<h1><a href="#" onclick="postMessagenavigationBarHide()">네비게이션바 숨기기</a></h1><br>
+	<h1><a href="#" onclick="postMessagenavigationBarShow()">네비게이션바 보이기</a></h1><br>
+	<h1><a href="#" onclick="postMessagesystemBackgroundColor()">상/하단 시스템바 컬러 변경 </a></h1><br>
+	<h1><a href="#" onclick="postMessagesystemStatusBar()">시스템바텍스트컬러변경</a></h1><br>
+	<h1><a href="#" onclick="postMessagescreenOrientationL()">화면회전 - LANDSCAPE</a></h1><br>
+	<h1><a href="#" onclick="postMessagescreenOrientationP()">화면회전 - PORTRAIT</a></h1><br>
+	
 	</body>
 </html>
