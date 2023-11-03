@@ -47,11 +47,11 @@
 		    "items": [
 		      {
 		        "text": "List1",
-		        "imageUrl": "https://hyundai.com/icon1.png"
+		        "imageUrl": "ryutskr.github.io/SGRV22SWP_NIRO.png"
 		      },
 		      {
 		        "text": "List2",
-		        "imageUrl": "https://hyundai.com/icon2.png"
+		        "imageUrl": "ryutskr.github.io/SGRV22SWP_NIRO.png"
 		      }
 		    ]
 		  },
@@ -59,6 +59,30 @@
 		}`;
 		window.JavascriptInterface.openImageViewer(str)
 	    }
+
+			function postMessageopenImageViewerM() {
+		const str = `{
+		  "uid": "9999",
+		  "contents": {
+		    "type": "MULTIPLE_SELECT",
+		    "startIndex": 1,
+		    "selectedIndexes": [1],
+		    "items": [
+		      {
+		        "text": "List1",
+		        "imageUrl": "ryutskr.github.io/SGRV22SWP_NIRO.png"
+		      },
+		      {
+		        "text": "List2",
+		        "imageUrl": "ryutskr.github.io/SGRV22SWP_NIRO.png"
+		      }
+		    ]
+		  },
+		  "resultFuncName": "selectedImages"
+		}`;
+		window.JavascriptInterface.openImageViewer(str)
+	    }
+			
 			
 	function postMessageOpenWebView() {
 		const str = `{
@@ -128,7 +152,8 @@
 	
 	<h1><a href="#" onclick="postMessageShowTost()">네이티브에 메시지 전달(showTost)</a></h1><br>
 	<h1><a href="#" onclick="postMessageShowTostWrong()">네이티브에 메시지 전달 오류(showTost)</a></h1><br>
-	<h1><a href="#" onclick="postMessageopenImageViewer()">이미지뷰어 오픈</a></h1><br>
+	<h1><a href="#" onclick="postMessageopenImageViewer()">이미지뷰어 오픈 Viewer</a></h1><br>
+	<h1><a href="#" onclick="postMessageopenImageViewerM()">이미지뷰어 오픈 MultiSelect</a></h1><br>
 	<h1><a href="#" onclick="postMessageOpenWebView()">내부 웹뷰(openNewWebView)</a></h1><br>
 	<h1><a href="#" onclick="postMessageOpenWebView()">외부브라우저(openWebBrowser)</a></h1><br>
 	<h1><a href="#" onclick="postMessageupdateNavigationBarTitle()">업데이트 타이틀</a></h1><br>
